@@ -304,7 +304,6 @@ def serialize_random_forest_regressor(model):
         'max_features': model.max_features,
         'max_leaf_nodes': model.max_leaf_nodes,
         'min_impurity_decrease': model.min_impurity_decrease,
-        'min_impurity_split': model.min_impurity_split,
         'n_features_': model.n_features_,
         'n_outputs_': model.n_outputs_,
         'estimators_': [serialize_decision_tree_regressor(decision_tree) for decision_tree in model.estimators_],
@@ -333,7 +332,6 @@ def deserialize_random_forest_regressor(model_dict):
     model.max_features = model_dict['max_features']
     model.max_leaf_nodes = model_dict['max_leaf_nodes']
     model.min_impurity_decrease = model_dict['min_impurity_decrease']
-    model.min_impurity_split = model_dict['min_impurity_split']
 
     if 'oob_score_' in model_dict:
         model.oob_score_ = model_dict['oob_score_']
